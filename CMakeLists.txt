@@ -10,6 +10,7 @@ find_package(cv_bridge REQUIRED)
 add_executable(process process.cpp)
 ament_target_dependencies(
   process rclcpp cv_bridge image_transport image_transport_plugins)
+target_link_libraries(process ${OpenCV_LIBRARIES})
 
 install(TARGETS process DESTINATION lib/${PROJECT_NAME})
 
