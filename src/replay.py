@@ -6,6 +6,8 @@ from rclpy.node import Node
 from cv_bridge import CvBridge
 from sensor_msgs.msg import CompressedImage
 
+only = ['full.png']
+
 
 class ReplayNode(Node):
 
@@ -36,7 +38,7 @@ class ReplayNode(Node):
             return []
 
         ext = ('jpg','JPG','png','PNG')
-        files = [f for f in os.listdir(im_dir) if any(f.endswith(e) for e in ext)]
+        files = only if only else [f for f in os.listdir(im_dir) if any(f.endswith(e) for e in ext)]
 
         bridge = CvBridge()
         msg = []

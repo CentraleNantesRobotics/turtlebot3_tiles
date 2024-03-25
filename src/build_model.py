@@ -30,8 +30,7 @@ squares = []
 for x in range(n-1):
     for y in range(n-1):
         idx = n*x + y
-        squares.append((idx, idx+1, idx+n+1, idx+n))
-        #squares.append(reversed(squares[-1]))
+        squares.append((idx+n, idx+n+1, idx+1, idx))
 
 
 

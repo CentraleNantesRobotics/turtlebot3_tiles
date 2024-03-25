@@ -3,7 +3,7 @@
 
 #include <vector>
 
-//#define TURTLEBOT
+#define TURTLEBOT
 
 namespace camera
 {

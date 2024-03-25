@@ -1,0 +1,28 @@
+pose:
+    type: geometry_msgs/Pose
+    x: 
+        min: -10
+        max: 10
+        to: position.x
+    y: 
+        min: -10
+        max: 10
+        to: position.y
+    z: 
+        min: 0.1
+        max: 10
+        default: 0.5
+        to: position.z
+    roll:
+        min: -pi
+        max: pi
+        to: orientation.roll
+    pitch:
+        min: -pi
+        max: pi
+        to: orientation.pitch
+    yaw:
+        min: -pi
+        max: pi
+        to: orientation.yaw
+

@@ -34,6 +34,13 @@ public:
     {
       tracker = std::make_unique<MBT>();
       process_timer = create_wall_timer(500ms, [&](){processMBT();});
+
+      static auto pose_sub = create_subscription<geometry_msgs::msg::Pose>("pose", 1, [&](const geometry_msgs::msg::Pose &msg)
+      {
+        tracker->reset(msg);
+      });
+      process_timer = create_wall_timer(500ms, [&](){processMBT();});
+
     }
     else
     {
